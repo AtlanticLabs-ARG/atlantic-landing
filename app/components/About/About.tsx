@@ -45,7 +45,7 @@ export default function About() {
         {items.map((item) => {
           return (
             <div
-              className="group transition duration-500 ease-in-out w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] hover:scale-125"
+              className="group cursor-default transition duration-500 ease-in-out w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] hover:scale-125"
               key={item.title}
             >
               <Image
