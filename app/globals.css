@@ -9,6 +9,7 @@
   --blue: #5b86e5;
   --darkGreen: #001915;
   --grey: #606060;
+  --darkGrey: #505050;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -23,4 +24,26 @@ body {
   color: #fff;
   background: var(--darkGreen);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darkGreen);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: var(--blue); */
+  background: var(--grey);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darkGrey);
 }
