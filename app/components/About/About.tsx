@@ -40,7 +40,7 @@ const items = [
 
 export default function About() {
   return (
-    <section className="w-screen h-screen mt-40 flex justify-center">
+    <section className="w-screen my-40 flex justify-center">
       <div className="w-5/6 h-full flex flex-row justify-center items-start">
         {items.map((item) => {
           return (
