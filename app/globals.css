@@ -6,7 +6,7 @@
   /* --background: #ffffff;
   --foreground: #171717; */
   --primary: #36d1dc;
-  --lightBlue: #4DA3E1;
+  --lightBlue: #4da3e1;
   --blue: #5b86e5;
   --darkGreen: #001915;
   --grey: #606060;
@@ -47,4 +47,28 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--darkGrey);
+}
+
+/* Partners lines */
+
+.right-partner-line {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-image-source: linear-gradient(
+    90deg,
+    #d9d9d9 0%,
+    rgba(0, 25, 21, 0) 100%
+  );
+  border-image-slice: 1;
+}
+
+.left-partner-line {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(0, 25, 21, 0) 0%,
+    #d9d9d9 100%
+  );
+  border-image-slice: 1;
 }

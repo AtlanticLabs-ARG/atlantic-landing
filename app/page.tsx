@@ -1,4 +1,13 @@
-import { About, Hero, Team } from "@/components";
+import {
+  About,
+  Bases,
+  Contact,
+  Footer,
+  Hero,
+  Partners,
+  Publicity,
+  Team,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -6,6 +15,11 @@ export default function Home() {
       <Hero />
       <About />
       <Team />
+      <Bases />
+      <Partners />
+      <Publicity />
+      <Contact />
+      <Footer />
     </main>
   );
 }
