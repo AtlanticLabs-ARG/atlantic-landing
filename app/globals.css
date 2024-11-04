@@ -72,3 +72,19 @@ body {
   );
   border-image-slice: 1;
 }
+
+.bases-0 {
+  width: 80%;
+}
+.bases-1 {
+  width: 70%;
+}
+.bases-2 {
+  width: 60%;
+}
+.bases-3 {
+  width: 50%;
+}
+.bases-4 {
+  width: 40%;
+}
