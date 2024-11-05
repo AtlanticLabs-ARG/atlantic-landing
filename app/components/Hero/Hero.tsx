@@ -11,11 +11,15 @@ export default function Hero() {
           alt="banner"
         />
       </div>
-      <div className="w-1/3 h-screen flex flex-col justify-center pl-20 gap-6">
-        <h1 className="text-[64px] leading-[64px] font-bold">
-          Impulsamos tus proyectos
+      <div className="w-2/3 h-[90%] flex flex-col justify-center pl-20 gap-8">
+        <h1 className="text-[64px] leading-[64px] font-normal">
+          Atlantic <br />
+          <span className="font-bold">Labs</span>
         </h1>
-        <h2 className="text-[32px]">Es hora de crear tu página web</h2>
+        <h2 className="text-[32px]">
+          Desarrollamos soluciones innovadoras <br />
+          para impulsar tu crecimiento.
+        </h2>
       </div>
     </section>
   );

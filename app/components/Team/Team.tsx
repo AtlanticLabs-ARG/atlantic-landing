@@ -4,44 +4,64 @@ import "./Team.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import { useState } from "react";
 import teamHilber from "@/assets/images/team/team-hilber.png";
 import teamEvelyn from "@/assets/images/team/team-evelyn.png";
+import teamFranco from "@/assets/images/team/team-franco.png";
+import teamEmanuel from "@/assets/images/team/team-emanuel.png";
+import teamLucia from "@/assets/images/team/team-lucia.png";
+import teamCamilaB from "@/assets/images/team/team-camila-b.png";
+import teamCamilaS from "@/assets/images/team/team-camila-s.png";
 import vectorRight from "@/assets/images/vector-right.svg";
 import vectorLeft from "@/assets/images/vector-left.svg";
 
 const team = [
   {
     id: 0,
-    src: teamHilber.src,
+    src: teamCamilaB.src,
+    alt: "Camila Bosco",
   },
   {
     id: 1,
     src: teamEvelyn.src,
+    alt: "Evelyn Meson",
   },
   {
     id: 2,
-    src: teamHilber.src,
+    src: teamCamilaS.src,
+    alt: "Camila Suarez",
   },
   {
     id: 3,
-    src: teamEvelyn.src,
+    src: teamEmanuel.src,
+    alt: "Emanuel Maldonado",
   },
   {
     id: 4,
-    src: teamHilber.src,
+    src: teamLucia.src,
+    alt: "Lucia Chinni",
   },
+  {
+    id: 5,
+    src: teamHilber.src,
+    alt: "Hilber Fraiese",
+  },
+  {
+    id: 6,
+    src: teamFranco.src,
+    alt: "Franco Fraiese",
+  }
 ];
 
-const initIndex = 2;
+const initIndex = 5;
 
 export default function Team() {
   const [index, setIndex] = useState(initIndex);
   // const swiperRef = useRef(null);
 
-  const handleSlideClick = (swiper: any) => {
+  const handleSlideClick = (swiper: SwiperClass) => {
     const currentIndex = swiper.activeIndex;
     setIndex(currentIndex);
 
@@ -81,7 +101,7 @@ export default function Team() {
           centeredSlides={true}
           onSlideChange={handleSlideClick}
           modules={[EffectCoverflow]}
-          slideToClickedSlide={true} // Navigates to clicked card
+          slideToClickedSlide={true}
           effect={"coverflow"}
           coverflowEffect={{
             rotate: 0,
@@ -90,6 +110,7 @@ export default function Team() {
             modifier: 3,
             slideShadows: false,
           }}
+          grabCursor
           breakpoints={{
             375: {
               slidesPerView: 3,
@@ -105,7 +126,7 @@ export default function Team() {
         >
           {team.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="h-[800px] ">
+              <div className="h-[650px] ">
                 {item.id !== index && <div className="overlay" />}
                 {/* eslint-disable-next-line */}
                 <img

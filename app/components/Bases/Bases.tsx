@@ -28,7 +28,7 @@ const items = [
 
 export default function Bases() {
   return (
-    <section className="w-screen flex flex-col justify-start items-center my-28">
+    <section className="w-screen flex flex-col justify-start items-center my-28 cursor-default">
       <div className="w-11/12 h-full flex flex-col justify-start items-center">
         <h1 className="text-2xl text-lightBlue">
           Como equipo confiamos en 5 bases principales
@@ -49,7 +49,7 @@ export default function Bases() {
                   </span>
                   {item.title}
                   <span
-                    className={`ml-2 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-500 delay-500`}
+                    className={`ml-2 hidden opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-500 delay-500`}
                   >
                     {item.text}
                   </span>

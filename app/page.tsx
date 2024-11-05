@@ -4,6 +4,7 @@ import {
   Contact,
   Footer,
   Hero,
+  NavBar,
   Partners,
   Publicity,
   Team,
@@ -12,6 +13,7 @@ import {
 export default function Home() {
   return (
     <main>
+      <NavBar />
       <Hero />
       <About />
       <Team />

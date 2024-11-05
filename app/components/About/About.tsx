@@ -50,10 +50,11 @@ export default function About() {
             >
               <Image
                 width={80}
-                height={80}
+                height={0}
                 className="object-cover grayscale opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0"
                 src={item.image}
                 alt={item.title}
+                style={{ height: "auto"}}
               />
               <h1 className="text-base transition duration-500 group-hover:text-lightBlue">
                 {item.title}
