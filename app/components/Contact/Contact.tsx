@@ -8,7 +8,7 @@ import logoFacebook from "@/assets/images/contact/logo-facebook.svg";
 
 export default function Contact() {
     return (
-      <section className="w-screen h-full flex flex-col items-center gap-y-8" id="Contact">
+      <section className="w-screen h-full flex flex-col items-center gap-y-8 py-40" id="contact">
         <div className="w-full flex flex-row items-center justify-center gap-12 mb-4 p-4">
           <div className="w-1/4 left-partner-line text-white" />
             <h3 className="text-xl text-[#EEE4F7] text-center font-bold">
@@ -42,7 +42,7 @@ export default function Contact() {
             <span className="roboto-flex text-2xl font-thin tracking-wide">Mar del Plata, Argentina</span>
           </div>
         </div>
-        <div className="w-full flex flex-row items-center justify-center gap-6 mb-4 p-12">
+        <div className="w-full flex flex-row items-center justify-center gap-6 px-12">
           <div className="w-1/4 left-partner-line text-white" />
           <img
               src={logoInstagram.src}

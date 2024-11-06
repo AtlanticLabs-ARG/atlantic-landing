@@ -78,6 +78,8 @@ html {
   border-image-slice: 1;
 }
 
+/* Bases items stairs style */
+
 .bases-0 {
   width: 80%;
 }
@@ -94,7 +96,7 @@ html {
   width: 40%;
 }
 
-
+/* NavBar logo color change */
 .logo-filter {
   filter: brightness(0) saturate(100%) invert(9%) sepia(32%) saturate(1560%)
     hue-rotate(128deg) brightness(93%) contrast(104%);
@@ -103,6 +105,8 @@ html {
 .navbar-shadow {
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+
+/* Contact numbers font */
 
 .roboto-flex {
   font-family: 'Roboto Flex', sans-serif;

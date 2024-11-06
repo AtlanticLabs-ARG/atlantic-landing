@@ -3,7 +3,7 @@ import publicity from "@/assets/images/publicity.png";
 
 export default function Publicity() {
   return (
-    <section className="w-full mb-40 flex items-center justify-center">
+    <section className="w-full flex items-center justify-center">
       <div className="w-11/12">
         <Image
           alt="Parense de manos II"
