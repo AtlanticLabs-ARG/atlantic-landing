@@ -3,6 +3,7 @@ import pdm from "@/assets/images/partners/parense-de-manos.png";
 import dids from "@/assets/images/partners/3dids.svg";
 import syd from "@/assets/images/partners/syd.svg";
 import teiki from "@/assets/images/partners/teiki.svg";
+import latinus from "@/assets/images/partners/latinus.svg";
 import pdmLogo from "@/assets/images/partners/pdm-logo.svg";
 
 const items = [
@@ -30,10 +31,19 @@ const items = [
     width: teiki.width,
     height: teiki.height,
   },
+  {
+    alt: "Latinus",
+    image: latinus.src,
+    width: latinus.width,
+    height: latinus.height,
+  },
 ];
 export default function Partners() {
   return (
-    <section className="w-screen flex justify-center pt-40 pb-48 cursor-default" id="partners">
+    <section
+      className="w-screen flex justify-center pt-40 pb-48 cursor-default"
+      id="partners"
+    >
       <div className="w-5/6 h-full flex flex-col justify-start items-center gap-16">
         <div className="w-full flex flex-row items-center justify-center gap-12">
           <div className="w-1/4 left-partner-line text-white" />
@@ -42,7 +52,7 @@ export default function Partners() {
           </h3>
           <div className="w-1/4 right-partner-line" />
         </div>
-        <div className="w-2/3 flex flex-row justify-between items-center mt-16 mb-28">
+        <div className="w-full flex flex-row justify-evenly items-center mt-16 mb-28">
           {items.map((item) => {
             return (
               <Image
