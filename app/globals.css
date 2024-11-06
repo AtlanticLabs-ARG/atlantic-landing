@@ -27,6 +27,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -87,4 +90,13 @@ body {
 }
 .bases-4 {
   width: 40%;
+}
+
+.logo-filter {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(32%) saturate(1560%)
+    hue-rotate(128deg) brightness(93%) contrast(104%);
+}
+
+.navbar-shadow {
+  box-shadow: 0px 4px 4px 0px #00000040;
 }

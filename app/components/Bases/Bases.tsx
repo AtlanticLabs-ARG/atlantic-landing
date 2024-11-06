@@ -28,7 +28,10 @@ const items = [
 
 export default function Bases() {
   return (
-    <section className="w-screen flex flex-col justify-start items-center my-28 cursor-default">
+    <section
+      className="w-screen flex flex-col justify-start items-center py-28 cursor-default"
+      id="bases"
+    >
       <div className="w-full h-full flex flex-col justify-start items-center px-20">
         <h1 className="text-2xl text-lightBlue">
           Como equipo confiamos en 5 bases principales

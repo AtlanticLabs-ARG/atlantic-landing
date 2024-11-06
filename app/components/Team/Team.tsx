@@ -20,42 +20,42 @@ import vectorLeft from "@/assets/images/vector-left.svg";
 const team = [
   {
     id: 0,
-    src: teamCamilaB.src,
-    alt: "Camila Bosco",
-  },
-  {
-    id: 1,
-    src: teamEvelyn.src,
-    alt: "Evelyn Meson",
-  },
-  {
-    id: 2,
     src: teamCamilaS.src,
     alt: "Camila Suarez",
   },
   {
-    id: 3,
+    id: 1,
     src: teamEmanuel.src,
     alt: "Emanuel Maldonado",
   },
   {
-    id: 4,
+    id: 2,
     src: teamLucia.src,
     alt: "Lucia Chinni",
   },
   {
-    id: 5,
+    id: 3,
     src: teamHilber.src,
     alt: "Hilber Fraiese",
   },
   {
-    id: 6,
+    id: 4,
     src: teamFranco.src,
     alt: "Franco Fraiese",
-  }
+  },
+  {
+    id: 5,
+    src: teamCamilaB.src,
+    alt: "Camila Bosco",
+  },
+  {
+    id: 6,
+    src: teamEvelyn.src,
+    alt: "Evelyn Meson",
+  },
 ];
 
-const initIndex = 5;
+const initIndex = 3;
 
 export default function Team() {
   const [index, setIndex] = useState(initIndex);
@@ -105,7 +105,7 @@ export default function Team() {
           effect={"coverflow"}
           coverflowEffect={{
             rotate: 0,
-            stretch: -20,
+            stretch: 0,
             depth: 100,
             modifier: 3,
             slideShadows: false,

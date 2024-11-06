@@ -40,7 +40,7 @@ const items = [
 
 export default function About() {
   return (
-    <section className="w-screen my-40 flex justify-center">
+    <section className="w-screen py-40 flex justify-center" id="about">
       <div className="w-5/6 h-full flex flex-row justify-center items-start">
         {items.map((item) => {
           return (
@@ -54,7 +54,7 @@ export default function About() {
                 className="object-cover grayscale opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0"
                 src={item.image}
                 alt={item.title}
-                style={{ height: "auto"}}
+                style={{ height: "auto" }}
               />
               <h1 className="text-base transition duration-500 group-hover:text-lightBlue">
                 {item.title}
