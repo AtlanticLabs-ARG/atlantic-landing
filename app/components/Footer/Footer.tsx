@@ -1,5 +1,5 @@
-import vectorFooter from "@/assets/images/footer/vector-bg.svg";
-import whiteLogoAtlantic from "@/assets/images/footer/white-logo-atlantic.svg";
+import vectorFooter from "@/assets/images/contact/vector-bg.svg";
+import whiteLogoAtlantic from "@/assets/images/contact/white-logo-atlantic.svg";
 import Image from "next/image";
 
 export default function Footer() {

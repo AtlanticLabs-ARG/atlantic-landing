@@ -29,17 +29,16 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`z-10 navbar-shadow fixed px-7 py-2.5 top-0 w-full bg-[#D9D9D9CC] transition-transform duration-300]
- ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+      className={`z-10 navbar-shadow fixed px-7 py-2.5 top-0 w-full bg-darkGreen transition-transform duration-700]
+ ${isVisible ? "translate-y-0" : "-translate-y-16"}`}
     >
-      <div className="flex justify-between items-center text-darkGreen">
+      <div className="flex justify-between items-center text-white">
         <a href="#hero">
           <Image
             src={logo.src}
             alt="AtlanticLabs"
             height={30}
             width={30}
-            className="logo-filter"
           />
         </a>
         <ul className="flex space-x-8 text-xl">

@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap");
 
 :root {
   /* --background: #ffffff;
@@ -96,18 +95,25 @@ html {
   width: 40%;
 }
 
-/* NavBar logo color change */
-.logo-filter {
-  filter: brightness(0) saturate(100%) invert(9%) sepia(32%) saturate(1560%)
-    hue-rotate(128deg) brightness(93%) contrast(104%);
-}
-
+/* NAVBAR SHADOW */
 .navbar-shadow {
-  box-shadow: 0px 4px 4px 0px #00000040;
+  box-shadow: 0px 0px 20px 0px #eee4f7;
 }
 
 /* Contact numbers font */
 
 .roboto-flex {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+/* contact svg filters */
+
+.contact-logo-filter {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(0%) saturate(1%)
+    hue-rotate(254deg) brightness(111%) contrast(86%);
+}
+
+.contact-media-logo-filter {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(9%) saturate(584%)
+    hue-rotate(209deg) brightness(106%) contrast(88%);
 }
