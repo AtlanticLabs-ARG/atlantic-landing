@@ -2,6 +2,7 @@ import about from "@/assets/images/about/about.png";
 import vision from "@/assets/images/about/vision.png";
 import mision from "@/assets/images/about/mision.png";
 import Image from "next/image";
+
 const items = [
   {
     title: "Visión",
@@ -42,31 +43,29 @@ export default function About() {
   return (
     <section className="w-screen py-40 flex justify-center" id="about">
       <div className="w-5/6 h-full flex flex-row justify-center items-start">
-        {items.map((item) => {
-          return (
-            <div
-              className="group cursor-default transition duration-500 ease-in-out w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] hover:scale-125"
-              key={item.title}
-            >
-              <Image
-                width={80}
-                height={0}
-                className="object-cover grayscale opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0"
-                src={item.image}
-                alt={item.title}
-                style={{ height: "auto" }}
-              />
-              <h1 className="text-base transition duration-500 group-hover:text-lightBlue">
-                {item.title}
-              </h1>
-              <div className="flex flex-col items-center justify-start text-sm mt-2 transition duration-500 group-hover:text-[#EEE4F7]">
-                {item.text.map((text, index) => {
-                  return <h3 key={`${item.title}-text-${index}`}>{text}</h3>;
-                })}
-              </div>
+        {items.map((item) => (
+          <div
+            className="group cursor-default transition duration-500 ease-in-out w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] hover:scale-125"
+            key={item.title}
+          >
+            <Image
+              width={80}
+              height={0}
+              className="object-cover grayscale opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0"
+              src={item.image}
+              alt={item.title}
+              style={{ height: "auto" }}
+            />
+            <h1 className="text-base transition duration-500 group-hover:text-lightBlue">
+              {item.title}
+            </h1>
+            <div className="flex flex-col items-center justify-start text-sm mt-2 transition duration-500 group-hover:text-[#EEE4F7]">
+              {item.text.map((text, index) => (
+                <h3 key={`${item.title}-text-${index}`}>{text}</h3>
+              ))}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );
