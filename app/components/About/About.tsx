@@ -9,7 +9,7 @@ const items = [
     image: vision.src,
     text: "Ser una empresa reconocida por nuestra capacidad de innovación y nuestro impacto construyendo en el crecimiento de nuestros clientes, construyendo relaciones sólidas y posicionándonos como líderes en el mundo tecnologico.",
     class:
-      "pt-60 lg:pt-20 absolute lg:static top-[80vh] lg:top-[0px] -z-10 lg:z-0",
+      "pt-60 lg:pt-20 absolute lg:static top-[60vh] lg:top-[0px] -z-10 lg:z-0",
   },
   {
     title: "¿Quiénes somos?",
@@ -22,7 +22,7 @@ const items = [
     image: mision.src,
     text: "Crear soluciones tecnológicas innovadoras y de alto impacto que impulsen el crecimiento de nuestros clientes y de nuestra empresa, adaptándonos a sus necesidades y generando valor en cada proyecto.",
     class:
-      "pt-60 lg:pt-20 absolute lg:static top-[160vh] lg:top-[0px] -z-20 lg:z-0",
+      "pt-60 lg:pt-20 absolute lg:static top-[120vh] lg:top-[0px] -z-20 lg:z-0",
   },
 ];
 
@@ -30,10 +30,10 @@ export default function About() {
   return (
     <section className="w-screen py-10 flex justify-center" id="about">
       <div className="container flex justify-center">
-        <div className="w-5/6 flex flex-col gap-20 lg:flex-row justify-center items-center lg:items-start relative h-[300vh] lg:h-auto">
+        <div className="w-5/6 flex flex-col gap-20 lg:flex-row justify-center items-center lg:items-start relative h-[200vh] lg:h-auto">
           {items.map((item) => (
             <div
-              className={`${item.class} h-[100vh] lg:h-auto group cursor-default transition duration-500 ease-in-out w-3/4 lg:w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] bg-darkGreen lg:hover:scale-125 pb-20 rounded-[8vh] px-10 shadow-[#EEE4F750_0px_0px_40px] lg:shadow-none`}
+              className={`${item.class} h-[80vh] lg:h-auto group cursor-default transition duration-500 ease-in-out w-3/4 lg:w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] bg-darkGreen lg:hover:scale-125 pb-20 rounded-[8vh] px-10 shadow-[rgba(91,134,229,0.2)_0px_0px_40px] lg:shadow-none`}
               key={item.title}
             >
               <Image

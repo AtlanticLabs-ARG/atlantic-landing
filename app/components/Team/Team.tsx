@@ -57,87 +57,77 @@ const team = [
 
 const initIndex = 3;
 
+const breakpoints = {
+  375: {
+    slidesPerView: 1,
+  },
+  640: {
+    slidesPerView: 3,
+  },
+  1024: {
+    slidesPerView: 5,
+  },
+};
+
 export default function Team() {
   const [index, setIndex] = useState(initIndex);
-  // const swiperRef = useRef(null);
 
   const handleSlideClick = (swiper: SwiperClass) => {
     const currentIndex = swiper.activeIndex;
     setIndex(currentIndex);
-
-    // if (currentIndex > index) goNext();
-    // else goPrev();
   };
 
-  // const goNext = () => {
-  //   if (swiperRef?.current?.swiper) {
-  //     swiperRef.current.swiper.slideNext();
-  //   }
-  // };
-
-  // const goPrev = () => {
-  //   if (swiperRef?.current?.swiper) {
-  //     swiperRef.current.swiper.slidePrev();
-  //   }
-  // };
+  const slideClass = (id: number) =>
+    Math.abs(index - id) > 1 ? "opacity-0 lg:opacity-100" : "opacity-100";
 
   return (
     <section className="w-screen h-screen flex justify-center items-center px-10 relative">
-      {/* eslint-disable-next-line */}
-      <img
-        src={vectorLeft.src}
-        className="w-1/2 h-full object-contain object-left absolute top-0 left-0"
-        alt="vectorRight"
-      />
-      {/* eslint-disable-next-line */}
-      <img
-        src={vectorRight.src}
-        className="w-1/2 h-full object-contain absolute top-0 right-0"
-        alt="vectorRight"
-      />
-      <div className="h-screen w-screen flex justify-center items-center">
-        <Swiper
-          initialSlide={initIndex}
-          centeredSlides={true}
-          onSlideChange={handleSlideClick}
-          modules={[EffectCoverflow]}
-          slideToClickedSlide={true}
-          effect={"coverflow"}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 3,
-            slideShadows: false,
-          }}
-          grabCursor
-          breakpoints={{
-            375: {
-              slidesPerView: 3,
-            },
-            640: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 5,
-            },
-          }}
-          // loop
-        >
-          {team.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="h-[650px] ">
-                {item.id !== index && <div className="overlay" />}
-                {/* eslint-disable-next-line */}
-                <img
-                  className="w-full h-full object-contain"
-                  src={item.src}
-                  alt="banner"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="container flex justify-center overflow-hidden">
+        {/* eslint-disable-next-line */}
+        <img
+          src={vectorLeft.src}
+          className="w-1/2 h-full object-contain object-left absolute top-0 left-0"
+          alt="vectorRight"
+        />
+        {/* eslint-disable-next-line */}
+        <img
+          src={vectorRight.src}
+          className="w-1/2 h-full object-contain absolute top-0 right-0"
+          alt="vectorRight"
+        />
+        <div className="h-screen w-screen flex justify-center items-center">
+          <Swiper
+            initialSlide={initIndex}
+            centeredSlides={true}
+            onSlideChange={handleSlideClick}
+            modules={[EffectCoverflow]}
+            slideToClickedSlide={true}
+            grabCursor
+            breakpoints={breakpoints}
+            effect={"coverflow"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 3,
+              slideShadows: false,
+            }}
+          >
+            {team.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className={`h-[650px] ${slideClass(item.id)}`}>
+                  {item.id !== index && <div className="overlay" />}
+                  {/* eslint-disable-next-line */}
+                  <img
+                    className="w-full h-full object-contain"
+                    src={item.src}
+                    alt="banner"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );
