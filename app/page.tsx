@@ -2,7 +2,6 @@ import {
   About,
   Bases,
   Contact,
-  Footer,
   Hero,
   NavBar,
   Partners,
