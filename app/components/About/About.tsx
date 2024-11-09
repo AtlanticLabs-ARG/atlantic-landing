@@ -46,7 +46,7 @@ export default function About() {
               <h2 className="text-xl lg:text-2xl transition duration-500 text-lightBlue lg:text-[#D9D9D980] group-hover:text-lightBlue text-center">
                 {item.title}
               </h2>
-              <div className="flex flex-col items-center justify-start text-center text-sm mt-2 transition duration-500 text-[#EEE4F7] lg:text-[#D9D9D980] group-hover:text-[#EEE4F7]">
+              <div className="flex flex-col items-center justify-start text-center text-sm mt-2 transition duration-500 text-softWhite lg:text-[#D9D9D980] group-hover:text-softWhite">
                 <p>{item.text}</p>
               </div>
             </div>

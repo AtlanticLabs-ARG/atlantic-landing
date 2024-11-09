@@ -1,92 +1,54 @@
-import vectorLocation from "@/assets/images/contact/vector-location.svg";
-import vectorPhone from "@/assets/images/contact/vector-phone.svg";
-import vectorEmail from "@/assets/images/contact/vector-email.svg";
-import logoInstagram from "@/assets/images/contact/logo-instagram.svg";
-import logoLinkedin from "@/assets/images/contact/logo-linkedin.svg";
-import logoFacebook from "@/assets/images/contact/logo-facebook.svg";
 import whiteLogoAtlantic from "@/assets/images/contact/white-logo-atlantic.svg";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
+import Social from "./Social";
 
 export default function Contact() {
   return (
     <section
-      className="w-screen h-full flex flex-col items-center py-40"
+      className="w-screen h-full flex flex-col items-center py-10 xl:py-40"
       id="contact"
     >
-      <div className="w-full px-80">
-        <div className="w-full h-full relative border-[#4CA3E1] border-[1px] bg-[#E7E0CF1A] px-5 py-10 flex flex-row justify-between items-center">
-          <div className="w-full flex flex-col justify-start items-center gap-10">
-            <div className="w-full flex flex-col text-start gap-4 font-light text-xl text-[#EEE4F7] px-10">
-              <h1 className="text-lightBlue text-3xl font-semibold">
-                Llevamos tu idea al siguiente nivel
-              </h1>
-              <h3>
-                Nos encantaría a ayudarte a impulsar tu proyecto,
-                <br />
-                nuestro propósito es brindarte el apoyo y orientación <br />
-                que necesites.
-              </h3>
-              <h3>
-                Completá nuestro formulario de contacto y descubrí <br />
-                cómo podemos potenciar juntos tus ideas.
-              </h3>
-              <h3>¡Esperamos tu mensaje!</h3>
-            </div>
-            <div className="w-full justify-center flex flex-col items-start gap-5 text-base font-extralight roboto-flex tracking-wide px-10">
-              <div className="flex items-center text-white gap-4">
-                <img
-                  src={vectorEmail.src}
-                  className="w-5 h-5 contact-logo-filter"
-                  alt="vectorEmail"
-                />
-                <span>info@atlanticlabs.com.ar</span>
+      <div className="container w-full h-full">
+        <div className="w-full px-5 xl:px-20 2xl:px-48 gap-16 flex flex-col">
+          <div className="w-full h-full relative border-[#4CA3E1] border-[1px] bg-[#E7E0CF1A] px-4 sm:px-8 py-6 sm:py-8 flex flex-col lg:flex-row items-center gap-8">
+            <div className="w-full flex flex-col justify-start items-center lg:gap-10">
+              <div className="w-full flex flex-col text-start gap-3 font-extralight text-sm sm:text-base md:text-[18px] lg:text-base xl:text-xl">
+                <h1 className="text-lightBlue text-base sm:text-lg md:text-xl lg:text-lg xl:text-3xl font-medium">
+                  Llevamos tu idea al siguiente nivel
+                </h1>
+                <h3 className="pr-5 text-softWhite">
+                  Nos encantaría a ayudarte a impulsar tu proyecto, nuestro
+                  propósito es brindarte el apoyo y orientación que necesites.
+                </h3>
+                <h3 className="pr-5 text-softWhite">
+                  Completá nuestro formulario de contacto y descubrí cómo
+                  podemos potenciar juntos tus ideas.
+                </h3>
+                <h3 className="pr-5">¡Esperamos tu mensaje!</h3>
               </div>
-              <div className="flex items-center gap-4">
-                <img
-                  src={vectorPhone.src}
-                  className="w-5 h-5 contact-logo-filter"
-                  alt="vectorPhone"
-                />
-                <span>(0223) 15 5253659</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <img
-                  src={vectorLocation.src}
-                  className="w-5 h-5 contact-logo-filter"
-                  alt="vectorLocation"
-                />
-                <span>Mar del Plata, Argentina</span>
+              <div className="hidden w-full lg:flex lg:items-start">
+                <Social />
               </div>
             </div>
-            <div className="w-full flex flex-row items-center justify-start gap-6 px-10">
-              <img
-                src={logoInstagram.src}
-                className="w-8 h-8 contact-media-logo-filter"
-                alt="logoInstagram"
-              />
-              <img
-                src={logoLinkedin.src}
-                className="w-8 h-8 contact-media-logo-filter"
-                alt="logoLinkedin"
-              />
-              <img
-                src={logoFacebook.src}
-                className="w-8 h-8 contact-media-logo-filter"
-                alt="logoFacebook"
-              />
+            <div className="w-full h-full lg:min-h-full flex flex-col justify-center items-center pr-3 xl:pr-10">
+              <ContactForm />
             </div>
+            <Image
+              src={whiteLogoAtlantic.src}
+              className="object-contain absolute bottom-5 right-3 w-10 xs:w-12 sm:w-14 md:w-16 lg:w-[70px] xl:w-20 h-10 xs:h-12 sm:h-14 md:h-16 lg:h-[70px] xl:h-20"
+              alt="Atlantic Labs"
+              width={0}
+              height={0}
+            />
           </div>
-          <div className="w-full max-w-[40%] h-full min-h-full flex flex-col justify-center items-center p-10">
-            <ContactForm />
+          <div className="lg:hidden">
+            <Social />
           </div>
-          <Image
-            src={whiteLogoAtlantic.src}
-            className="object-contain absolute bottom-5 right-3"
-            alt="Atlantic Labs"
-            width={75}
-            height={75}
-          />
+          <div className="text-softWhite flex flex-col lg:flex-row justify-center lg:justify-start items-start lg:items-center gap-3 lg:gap-10 xl:gap-14 mt-12 lg:mt-16 font-thin text-xs sm:text-sm lg:text-base">
+            <a href="term-and-conditions">Términos y condiciones</a>
+            <h3>© 2024 Atlantic Labs</h3>
+          </div>
         </div>
       </div>
     </section>

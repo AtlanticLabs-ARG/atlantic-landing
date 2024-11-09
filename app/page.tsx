@@ -13,15 +13,16 @@ import {
 export default function Home() {
   return (
     <main>
+      {/*  
       <NavBar />
       <Hero />
       <About />
       <Team />
       <Bases />
       <Partners />
-      <Publicity />
+      <Publicity /> */}
       <Contact />
-      <Footer />
-    </main>
+{/*       <Footer />
+ */}    </main>
   );
 }

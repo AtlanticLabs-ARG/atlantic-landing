@@ -21,15 +21,21 @@ const validationSchema = Yup.object({
     .matches(/^[a-zA-Z\s]+$/, "El nombre solo puede contener letras y espacios")
     .required("Debes ingresar tu nombre"),
   email: Yup.string()
-    .email("El email debe tener un formato válido")
-    .required("Debes ingresar un email"),
+    .email("Email incorrecto, por favor vuelva a intentar")
+    .required("Debes ingresar un email")
+    .min(6, "Email incorrecto, por favor vuelva a intentar"),
   phone: Yup.string()
-    .matches(/^[0-9]+$/, "El celular solo puede contener números")
-    .required("Debes ingresar tu celular"),
+    .matches(
+      /^[0-9]+$/,
+      "El número ingresado es incorrecto, por favor vuelva a intentar"
+    )
+    .required("Debes ingresar tu celular")
+    .min(8, "El número ingresado es incorrecto, por favor vuelva a intentar"),
 });
 
 export default function ContactForm() {
   const [successMessage, setSuccessMessage] = useState(false);
+  const [canSubmit, setCanSubmit] = useState(false);
 
   const initialValues: FormValues = {
     name: "",
@@ -37,16 +43,30 @@ export default function ContactForm() {
     phone: "",
   };
 
-  const onSubmit = async (values: FormValues, { resetForm }: any) => {
-    try {
-      if (!serviceId || !templateId || !userId) throw new Error();
-      await emailjs.send(serviceId, templateId, { ...values }, userId);
+  const onChange = (values: FormValues) => {
+    const errors: { [key: string]: string } = {};
 
-      resetForm();
-      setSuccessMessage(true);
-      setTimeout(() => setSuccessMessage(false), 3000);
-    } catch (error) {
-      console.error("Error al enviar el mensaje:", error);
+    if (!validationSchema.isValidSync(values)) {
+      setCanSubmit(false);
+    } else {
+      setCanSubmit(true);
+    }
+
+    return errors;
+  };
+
+  const onSubmit = async (values: FormValues, { resetForm }: any) => {
+    if (canSubmit) {
+      try {
+        if (!serviceId || !templateId || !userId) throw new Error();
+        await emailjs.send(serviceId, templateId, { ...values }, userId);
+
+        resetForm();
+        setSuccessMessage(true);
+        setTimeout(() => setSuccessMessage(false), 3000);
+      } catch (error) {
+        console.error("Error al enviar el mensaje:", error);
+      }
     }
   };
 
@@ -56,24 +76,25 @@ export default function ContactForm() {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
       validateOnChange
+      validate={onChange}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full h-full flex flex-col justify-center items-start gap-10">
-          <div className="w-full gap-3 flex flex-col justify-start items-start min-h-[85px]">
+        <Form className="w-full h-full flex flex-col justify-center items-start gap-5 roboto-flex text-sm">
+          <div className="w-full gap-3 flex flex-col justify-start items-start min-h-[77px]">
             <Field
               type="text"
               id="name"
               name="name"
-              className="w-full bg-transparent text-lg py-3 border-b-[1px] border-b-[#D9D9D94D] text-[#D9D9D9] placeholder:text-[#D9D9D9B2]"
+              className="w-full bg-transparent py-3 form-input-border text-[#D9D9D9] placeholder:text-[#D9D9D9B2] focus:outline-none focus:form-input-border"
               placeholder="Nombre"
             />
             <ErrorMessage
               name="name"
               render={(msg) => (
-                <div className="relative text-blue text-sm">
+                <div className="flex flex-row md:relative text-blue gap-2">
                   <Image
                     src={infoIcon.src}
-                    className="absolute -left-6 top-0.5"
+                    className="block md:absolute md:-left-6 md:top-0.5"
                     alt="Error en formulario"
                     width={16}
                     height={16}
@@ -83,21 +104,21 @@ export default function ContactForm() {
               )}
             />
           </div>
-          <div className="w-full gap-3 flex flex-col justify-start items-start min-h-[85px]">
+          <div className="w-full gap-3 flex flex-col justify-start items-start min-h-[77px]">
             <Field
               type="email"
               id="email"
               name="email"
-              className="w-full bg-transparent text-lg py-3 border-b-[1px] border-b-[#D9D9D94D] text-[#D9D9D9] placeholder:text-[#D9D9D9B2]"
+              className="w-full bg-transparent py-3 form-input-border text-[#D9D9D9] placeholder:text-[#D9D9D9B2] focus:outline-none focus:form-input-border"
               placeholder="Email"
             />
             <ErrorMessage
               name="email"
               render={(msg) => (
-                <div className="relative text-blue text-sm">
+                <div className="flex flex-row md:relative text-blue text-xs gap-2">
                   <Image
                     src={infoIcon.src}
-                    className="absolute -left-6 top-0.5"
+                    className="block md:absolute md:-left-6 md:top-0.5"
                     alt="Error en formulario"
                     width={16}
                     height={16}
@@ -107,21 +128,21 @@ export default function ContactForm() {
               )}
             />
           </div>
-          <div className="w-full gap-3 flex flex-col justify-start items-start min-h-[85px]">
+          <div className="w-full gap-3 flex flex-col justify-start items-start min-h-[77px]">
             <Field
-              type="text"
+              type="tel"
               id="phone"
               name="phone"
-              className="w-full bg-transparent text-lg py-3 border-b-[1px] border-b-[#D9D9D94D] text-[#D9D9D9] placeholder:text-[#D9D9D9B2]"
+              className="w-full bg-transparent py-3 form-input-border text-[#D9D9D9] placeholder:text-[#D9D9D9B2] focus:outline-none focus:form-input-border"
               placeholder="Celular"
             />
             <ErrorMessage
               name="phone"
               render={(msg) => (
-                <div className="relative text-blue text-sm">
+                <div className="flex flex-row md:relative text-blue text-xs gap-2">
                   <Image
                     src={infoIcon.src}
-                    className="absolute -left-6 top-0.5"
+                    className="block md:absolute md:-left-6 md:top-0.5"
                     alt="Error en formulario"
                     width={16}
                     height={16}
@@ -133,9 +154,13 @@ export default function ContactForm() {
           </div>
           <button
             type="submit"
-            className={`py-3 px-8 mt-6 ${
-              isSubmitting ? "bg-[#d9d9d927]" : "bg-grey"
-            } border-[1px] border-[#E6E0E9]`}
+            className={`py-2 px-6 mt-6 transition-colors duration-300 ${
+              isSubmitting ? "bg-[#d9d9d927]" : "bg-red"
+            } border-[1px] ${
+              canSubmit
+                ? "border-lightBlue text-lightBlue hover:cursor-pointer"
+                : "border-[#E6E0E9] text-[#E6E0E9] hover:cursor-not-allowed"
+            } text-base`}
             disabled={isSubmitting}
           >
             Enviar

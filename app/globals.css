@@ -12,6 +12,7 @@
   --darkGreen: #001915;
   --grey: #606060;
   --darkGrey: #505050;
+  --softWhite: #eee4f7;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -86,6 +87,12 @@ html {
 
 .roboto-flex {
   font-family: "Roboto Flex", sans-serif;
+}
+
+/* Formik input focus style */
+.form-input-border {
+  border-bottom-width: 1px;
+  border-bottom-color: #d9d9d94d;
 }
 
 /* contact svg filters */

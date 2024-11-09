@@ -16,6 +16,11 @@ const config: Config = {
         darkGreen: "var(--darkGreen)",
         grey: "var(--grey)",
         lightBlue: "var(--lightBlue)",
+        darkGrey: "var(--darkGrey)",
+        softWhite: "var(--softWhite)",
+      },
+      screens: {
+        xs: "500px",
       },
     },
   },

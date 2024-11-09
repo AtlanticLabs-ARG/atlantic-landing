@@ -47,7 +47,7 @@ export default function Partners() {
       <div className="w-5/6 h-full flex flex-col justify-start items-center gap-16">
         <div className="w-full flex flex-row items-center justify-center gap-12">
           <div className="w-1/4 left-partner-line text-white" />
-          <h3 className="text-xl text-[#EEE4F7] text-center">
+          <h3 className="text-xl text-softWhite text-center">
             Vinculados a marcas que nos inspiran
           </h3>
           <div className="w-1/4 right-partner-line" />
@@ -68,7 +68,7 @@ export default function Partners() {
         </div>
         <div className="w-full flex flex-row items-center justify-center gap-10">
           <div className="w-1/4 left-partner-line text-white" />
-          <h3 className="text-xl text-[#EEE4F7] text-center">
+          <h3 className="text-xl text-softWhite text-center">
             Nuestra última colaboración{" "}
           </h3>
           <div className="w-1/4 right-partner-line" />
