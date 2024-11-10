@@ -3,20 +3,50 @@
 import { useState, useEffect } from "react";
 import logo from "@/assets/favicon.svg";
 import Image from "next/image";
+import closeIcon from "@/assets/images/navbar/close-button.svg";
+import menuIcon from "@/assets/images/navbar/menu-button.svg";
+
+const menuItems = [
+  {
+    title: "Conocenos",
+    href: "#about",
+  },
+  {
+    title: "Nuestro valores",
+    href: "#bases",
+  },
+  {
+    title: "Partners",
+    href: "#partners",
+  },
+  {
+    title: "Contacto",
+    href: "#contact",
+  },
+];
+
 export default function NavBar() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(window.scrollY < 100);
+  const [isTop, setIsTop] = useState(window.scrollY < 120);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = () => {
+    setMenuOpen(false);
+    if (window.scrollY > 120) {
+      setIsTop(false);
+    } else {
+      setIsTop(true);
+    }
+
     if (window.scrollY > 100) {
       if (window.scrollY < lastScrollY) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
-    } else {
-      setIsVisible(false);
     }
+
     setLastScrollY(window.scrollY);
   };
 
@@ -27,42 +57,70 @@ export default function NavBar() {
     };
   }, [lastScrollY]);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav
-      className={`z-10 navbar-shadow fixed px-7 py-2.5 top-0 w-full bg-darkGreen transition-transform duration-700]
- ${isVisible ? "translate-y-0" : "-translate-y-16"}`}
+      className={`z-10 fixed px-7 py-2.5 top-0 w-full ${
+        !isTop && !menuOpen && "bg-darkGreen navbar-shadow"
+      } transition-all duration-700]
+ ${isVisible ? "translate-y-0" : "-translate-y-28"} `}
     >
       <div className="flex justify-between items-center text-white">
-        <a href="#hero">
-          <Image
-            src={logo.src}
-            alt="AtlanticLabs"
-            height={30}
-            width={30}
-          />
+        <a
+          href="#hero"
+          className={`${
+            menuOpen ? "-translate-y-10" : "translate-y-0"
+          } transition-transform duration-300`}
+        >
+          <Image src={logo.src} alt="AtlanticLabs" height={30} width={30} />
         </a>
-        <ul className="flex space-x-8 text-xl">
-          <li>
-            <a href="#about" className="cursor-pointer">
-              Conocenos
-            </a>
-          </li>
-          <li className="cursor-pointer">
-            <a href="#bases" className="cursor-pointer">
-              Nuestro valores
-            </a>
-          </li>
-          <li className="cursor-pointer">
-            <a href="#partners" className="cursor-pointer">
-              Partners
-            </a>
-          </li>
-          <li className="cursor-pointer">
-            <a href="#contact" className="cursor-pointer">
-              Contacto
-            </a>
-          </li>
+        <ul className="space-x-8 text-xl hidden lg:flex">
+          {menuItems.map((item, index) => (
+            <li key={`nav-${index}`}>
+              <a href={item.href} className="cursor-pointer">
+                {item.title}
+              </a>
+            </li>
+          ))}
         </ul>
+        <button onClick={toggleMenu} className="lg:hidden focus:outline-none">
+          <Image src={menuIcon} alt="Menu icon" width={24} height={24} />
+        </button>
+        <div
+          className={`w-screen flex flex-row justify-end absolute left-0 top-0 z-11 lg:hidden transition-transform duration-300 ${
+            menuOpen ? "translate-x-0" : "translate-x-full ml-2"
+          } h-screen bg-[#001915CC] backdrop-blur-sm`}
+        >
+          <div className="w-1/2">
+            <ul className="text-base flex flex-col bg-darkGreen z-20">
+              <li
+                key="close-button"
+                className="bg-transparent min-w-full flex justify-end px-6 py-3"
+              >
+                <button onClick={toggleMenu}>
+                  <Image
+                    className="w-auto"
+                    src={closeIcon}
+                    width={0}
+                    height={13}
+                    alt="Cerrar menu"
+                  />
+                </button>
+              </li>
+              {menuItems.map((item, index) => (
+                <li
+                  key={`nav-${index}`}
+                  className="bg-transparent hover:bg-blue text-softWhite hover:text-darkGreen transition-all duration-500 w-48 text-start flex px-2 py-2 cursor-pointer"
+                >
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );
