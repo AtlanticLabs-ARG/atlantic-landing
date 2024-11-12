@@ -3,7 +3,7 @@ import {
   Bases,
   Contact,
   Hero,
-  NavBar,
+  Navbar,
   Partners,
   Publicity,
   Team,
@@ -12,12 +12,13 @@ import {
 export default function Home() {
   return (
     <main>
-      <NavBar />
+      <Navbar />
       <Hero />
       <About />
       <Team />
       <Bases />
-      <Partners />
+      {/*       <Partners />
+       */}
       <Publicity />
       <Contact />
     </main>

@@ -3,10 +3,10 @@ import publicity from "@/assets/images/publicity.png";
 
 export default function Publicity() {
   return (
-    <section className="w-full flex items-center justify-center">
-      <div className="w-11/12">
+    <section className="w-screen flex items-center justify-center py-20">
+      <div className="w-full">
         <Image
-          alt="Parense de manos II"
+          alt="Publicidad AtlanticLabs"
           src={publicity.src}
           width={publicity.width}
           height={publicity.height}

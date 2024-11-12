@@ -6,7 +6,7 @@ import Social from "./Social";
 export default function Contact() {
   return (
     <section
-      className="w-screen h-full flex flex-col items-center py-10 xl:py-40"
+      className="w-screen h-full flex flex-col items-center mt-10 py-10 xl:py-40"
       id="contact"
     >
       <div className="container w-full h-full">

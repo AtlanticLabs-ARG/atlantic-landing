@@ -106,3 +106,36 @@ html {
   filter: brightness(0) saturate(100%) invert(90%) sepia(9%) saturate(584%)
     hue-rotate(209deg) brightness(106%) contrast(88%);
 }
+
+/* Background styles */
+.bg-banner {
+  background: url("./assets/images/mobile-banner.png") no-repeat;
+  background-size: cover;
+  background-position-x: 75%;
+  background-position-y: top;
+}
+
+@media (min-width: 450px) {
+  .bg-banner {
+    background: url("./assets/images/mobile-banner.png") no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+@media (min-width: 640px) {
+  .bg-banner {
+    background: url("./assets/images/mobile-banner.png") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-banner {
+    background: url("./assets/images/banner.png") no-repeat;
+    background-size: cover;
+    background-position-x: 75%;
+    background-position-y: top;
+  }
+}

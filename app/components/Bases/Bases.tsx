@@ -5,38 +5,30 @@ const items = [
   {
     number: "01",
     title: "Solución",
-    fullText:
-      "- Diseñamos soluciones personalizadas que se adaptan a cada necesidad.",
     text: "Diseñamos soluciones personalizadas que se adaptan a cada necesidad.",
     class: "w-full lg:w-4/5",
   },
   {
     number: "02",
     title: "Identidad",
-    fullText:
-      "- Nos comprometemos a transmitir un mensaje único en cada proyecto.",
     text: "Nos comprometemos a transmitir un mensaje único en cada proyecto.",
     class: "w-full lg:w-[70%]",
   },
   {
     number: "03",
     title: "Impacto",
-    fullText: "- Nuestra meta es marcar la diferencia.",
     text: "Nuestra meta es marcar la diferencia.",
     class: "w-full lg:w-3/5",
   },
   {
     number: "04",
     title: "Compañía",
-    fullText: "- Queremos acompañarte en cada paso.",
     text: "Queremos acompañarte en cada paso.",
     class: "w-full lg:w-1/2",
   },
   {
     number: "05",
     title: "Evolución",
-    fullText:
-      "- Creemos firmemente en la importancia de mantener un progreso continuo.",
     text: "Creemos firmemente en la importancia de mantener un progreso continuo.",
     class: "w-full lg:w-2/5",
   },
@@ -49,32 +41,30 @@ export default function Bases() {
       id="bases"
     >
       <div className="container flex justify-center">
-        <div className="w-full h-full flex flex-col justify-start items-center px-20">
-          <h1 className="text-xl lg:text-2xl text-lightBlue">
+        <div className="w-full h-full flex flex-col justify-start items-center px-6 xxs:px-8 xs:px-10">
+          <h1 className="text-xs xxs:text-sm xs:text-base md:text-lg lg:text-2xl font-semibold text-lightBlue">
             Como equipo confiamos en 5 bases principales
           </h1>
           <div className="w-full flex flex-col justify-start items-start lg:items-end my-14">
             {items.map((item, index) => (
               <div
-                className={`group transition-all duration-[${
+                className={`group relative transition-all duration-[${
                   500 + 25 * index
-                }] ease-in-out border border-lightBlue h-32 lg:h-auto w-full flex justify-end overflow-hidden`}
+                }] ease-in-out border border-lightBlue h-16 lg:h-32 xl:h-auto w-full flex justify-end overflow-hidden`}
                 key={item.number}
               >
                 <div
-                  className={`${item.class} text-sm sm:text-lg xl:text-xl text-[#ECE6F0] px-8 py-5 flex items-center group-hover:w-full group-hover:justify-start group-hover:text-darkGreen group-hover:bg-lightBlue transition-all duration-500 ease-in-out`}
+                  className={`${item.class} text-sm sm:text-lg xl:text-xl text-[#ECE6F0] px-3 lg:px-8 py-2 lg:py-5 flex items-center group-hover:w-full group-hover:justify-start transition-all duration-500 ease-in-out`}
                 >
-                  {/* Number and title */}
-                  <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-lightBlue text-center mr-10 group-hover:hidden lg:group-hover:block lg:group-hover:text-darkGreen transition-all duration-500 ease-in-out">
+                  {/* Número y título */}
+                  <span className="text-3xl lg:text-4xl xl:text-5xl text-lightBlue font-bold text-center mr-10 lg:group-hover:block lg:group-hover:text-darkGreen transition-all duration-500 ease-in-out">
                     {item.number}
                   </span>
 
-                  <h3 className="group-hover:hidden lg:group-hover:block mr-3 group-hover:mr-0">
-                    {item.title}
-                  </h3>
+                  <h3 className="mr-2">{item.title}</h3>
 
-                  {/* Arrow png */}
-                  <div className="min-w-2 group-hover:hidden lg:hidden">
+                  {/* Flecha */}
+                  <div className="min-w-2 lg:hidden">
                     <Image
                       className="w-full h-full object-contain"
                       src={arrow.src}
@@ -83,17 +73,15 @@ export default function Bases() {
                       height={8}
                     />
                   </div>
-
-                  {/* Description */}
-                  <span className="hidden lg:block lg:ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 lg:delay-300 lg:text-nowrap">
-                    {item.fullText}
-                  </span>
-
-                  {/* Description with title */}
-                  <span className="block lg:hidden lg:ml-2 opacity-0 group-hover:opacity-100 translate-x-[200%] group-hover:translate-x-0 group-hover:block lg:group-hover:hidden transition-opacity duration-500">
-                    {item.text}
-                  </span>
                 </div>
+                {/* Deslizable con texto descriptivo*/}
+                <span className="w-full h-full absolute top-0 right-0 z-[1] lg:ml-2 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out bg-lightBlue text-darkGreen px-3 sm:px-4 lg:px-5 py-2 lg:py-4 flex items-center lg:space-x-5 text-sm sm:text-base lg:text-lg xl:text-xl">
+                  {/* Numero visible en web */}
+                  <h1 className="hidden lg:flex text-3xl lg:text-5xl text-darkGreen font-bold text-start">
+                    {item.number}
+                  </h1>
+                  <span>{item.text}</span>
+                </span>
               </div>
             ))}
           </div>
