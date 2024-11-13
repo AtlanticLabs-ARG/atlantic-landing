@@ -4,6 +4,7 @@ import vectorEmail from "@/assets/images/contact/vector-email.svg";
 import logoInstagram from "@/assets/images/contact/logo-instagram.svg";
 import logoLinkedin from "@/assets/images/contact/logo-linkedin.svg";
 import logoFacebook from "@/assets/images/contact/logo-facebook.svg";
+import Link from "next/link";
 
 export default function Social() {
   return (
@@ -35,16 +36,23 @@ export default function Social() {
         </div>
       </div>
       <div className="flex flex-row items-center justify-start gap-6">
-        <img
-          src={logoInstagram.src}
-          className="w-7 h-7 contact-media-logo-filter"
-          alt="logoInstagram"
-        />
-        <img
-          src={logoLinkedin.src}
-          className="w-7 h-7 contact-media-logo-filter"
-          alt="logoLinkedin"
-        />
+        <Link href="https://www.instagram.com/atlantic.labs" target="_blank">
+          <img
+            src={logoInstagram.src}
+            className="w-7 h-7 contact-media-logo-filter"
+            alt="logoInstagram"
+          />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/company/atlanticlabs/"
+          target="_blank"
+        >
+          <img
+            src={logoLinkedin.src}
+            className="w-7 h-7 contact-media-logo-filter"
+            alt="logoLinkedin"
+          />
+        </Link>
         <img
           src={logoFacebook.src}
           className="w-7 h-7 contact-media-logo-filter"
