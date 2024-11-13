@@ -9,8 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        blue: "var(--blue)",
+        darkGreen: "var(--darkGreen)",
+        grey: "var(--grey)",
+        lightBlue: "var(--lightBlue)",
+        darkGrey: "var(--darkGrey)",
+        softWhite: "var(--softWhite)",
+      },
+      screens: {
+        xs: "500px",
+        xxs: "400px"
       },
     },
   },

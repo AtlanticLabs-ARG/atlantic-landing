@@ -1,21 +1,141 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+  --primary: #36d1dc;
+  --lightBlue: #4da3e1;
+  --blue: #5b86e5;
+  --darkGreen: #001915;
+  --grey: #606060;
+  --darkGrey: #505050;
+  --softWhite: #eee4f7;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground); */
+  color: #fff;
+  background: var(--darkGreen);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darkGreen);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: var(--blue); */
+  background: var(--grey);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darkGrey);
+}
+
+/* Partners lines */
+
+.right-partner-line {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-image-source: linear-gradient(
+    90deg,
+    #d9d9d9 0%,
+    rgba(0, 25, 21, 0) 100%
+  );
+  border-image-slice: 1;
+}
+
+.left-partner-line {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(0, 25, 21, 0) 0%,
+    #d9d9d9 100%
+  );
+  border-image-slice: 1;
+}
+
+/* NAVBAR SHADOW */
+.navbar-shadow {
+  box-shadow: 0px -2px 50px 0px #eee4f7;
+}
+
+/* Contact numbers font */
+
+.roboto-flex {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+/* Formik input focus style */
+.form-input-border {
+  border-bottom-width: 1px;
+  border-bottom-color: #d9d9d94d;
+}
+
+/* contact svg filters */
+
+.contact-logo-filter {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(0%) saturate(1%)
+    hue-rotate(254deg) brightness(111%) contrast(86%);
+}
+
+.contact-media-logo-filter {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(9%) saturate(584%)
+    hue-rotate(209deg) brightness(106%) contrast(88%);
+}
+
+/* Background styles */
+.bg-banner {
+  background: url("./assets/images/mobile-banner.png") no-repeat;
+  background-size: cover;
+  background-position-x: 75%;
+  background-position-y: top;
+}
+
+@media (min-width: 450px) {
+  .bg-banner {
+    background: url("./assets/images/mobile-banner.png") no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+@media (min-width: 640px) {
+  .bg-banner {
+    background: url("./assets/images/mobile-banner.png") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-banner {
+    background: url("./assets/images/banner.png") no-repeat;
+    background-size: cover;
+    background-position-x: 75%;
+    background-position-y: top;
+  }
 }
