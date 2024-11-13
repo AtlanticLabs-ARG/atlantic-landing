@@ -1,4 +1,3 @@
-import Image from "next/image";
 import pdm from "@/assets/images/partners/parense-de-manos.png";
 import dids from "@/assets/images/partners/3dids.svg";
 import syd from "@/assets/images/partners/syd.svg";
@@ -55,13 +54,19 @@ export default function Partners() {
         <div className="w-full flex flex-row justify-evenly items-center mt-16 mb-28">
           {items.map((item) => {
             return (
-              <Image
+              /*  <Image
                 key={item.alt}
                 alt={item.alt}
                 src={item.image}
                 width={item.width}
                 height={item.height}
                 className="grayscale transition duration-500 hover:grayscale-0 hover:scale-105"
+              /> */
+              <img
+                key={item.alt}
+                alt={item.alt}
+                src={item.image}
+                className={`grayscale transition duration-500 hover:grayscale-0 hover:scale-105 w-[${item.width}px] h-[${item.height}px]`}
               />
             );
           })}
@@ -73,11 +78,16 @@ export default function Partners() {
           </h3>
           <div className="w-1/4 right-partner-line" />
         </div>
-        <Image
+        {/* <Image
           alt="Parense de manos II"
           src={pdm.src}
           width={pdm.width}
           height={pdm.height}
+        /> */}
+        <img
+          alt="Parense de manos II"
+          className={`w-[${pdm.width}px] h-[${pdm.height}px]`}
+          src={pdm.src}
         />
       </div>
     </section>

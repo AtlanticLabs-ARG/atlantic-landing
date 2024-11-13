@@ -1,5 +1,4 @@
 import arrow from "@/assets/arrow.svg";
-import Image from "next/image";
 
 const items = [
   {
@@ -65,12 +64,17 @@ export default function Bases() {
 
                   {/* Flecha */}
                   <div className="min-w-2 lg:hidden">
-                    <Image
+                    {/*    <Image
                       className="w-full h-full object-contain"
                       src={arrow.src}
                       alt="arrow"
                       width={8}
                       height={8}
+                    /> */}
+                    <img
+                      className="object- w-2 h-auto"
+                      src={arrow.src}
+                      alt="arrow"
                     />
                   </div>
                 </div>

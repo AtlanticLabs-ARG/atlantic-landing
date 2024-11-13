@@ -1,7 +1,6 @@
 import about from "@/assets/images/about/about.png";
 import vision from "@/assets/images/about/vision.png";
 import mision from "@/assets/images/about/mision.png";
-import Image from "next/image";
 
 const items = [
   {
@@ -36,10 +35,15 @@ export default function About() {
               className={`${item.class} h-[80vh] lg:h-auto group cursor-default transition duration-500 ease-in-out w-3/4 lg:w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] bg-darkGreen lg:hover:scale-125 pb-20 rounded-[8vh] px-10 shadow-[rgba(91,134,229,0.2)_0px_0px_40px] lg:shadow-none`}
               key={item.title}
             >
-              <Image
+              {/* <Image
                 width={80}
                 height={0}
-                className="object-cover lg:grayscale lg:opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0 w-14 lg:w-20 h-auto"
+                className="object-cover lg:grayscale lg:opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0 lg:w-20 h-auto"
+                src={item.image}
+                alt={item.title}
+              /> */}
+              <img
+                className="object-cover lg:grayscale lg:opacity-80 transition duration-500 group-hover:opacity-1 group-hover:grayscale-0 w-20 lg:w-20 h-auto"
                 src={item.image}
                 alt={item.title}
               />

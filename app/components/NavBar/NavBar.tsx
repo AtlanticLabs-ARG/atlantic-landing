@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import logo from "@/assets/favicon.svg";
-import Image from "next/image";
 import closeIcon from "@/assets/images/navbar/close-button.svg";
 import menuIcon from "@/assets/images/navbar/menu-button.svg";
 
@@ -81,12 +80,17 @@ export default function Navbar() {
             menuOpen ? "-translate-y-10" : "translate-y-0"
           } transition-transform duration-300`}
         >
-          <Image
+          {/*   <Image
             src={logo.src}
             alt="AtlanticLabs"
             height={30}
             width={0}
             className="w-auto h-6 sm:h-7 md:h-[30px] xl:h-9"
+          /> */}
+          <img
+            src={logo.src}
+            alt="AtlanticLabs"
+            className="w-auto sm:h-7 md:h-[30px] xl:h-9 h-[30px]"
           />
         </a>
         <ul className="space-x-5 lg:space-x-6 xl:space-x-8 text-base lg:text-lg xl:text-xl 2xl:text-2xl hidden md:flex">
@@ -102,7 +106,9 @@ export default function Navbar() {
           onClick={toggleMenu}
           className="md:hidden focus:outline-none w-auto h-auto"
         >
-          <Image src={menuIcon} alt="Menu icon" width={24} height={0} />
+          {/*           <Image src={menuIcon} alt="Menu icon" width={24} height={0} />
+           */}
+          <img src={menuIcon} alt="Menu icon" className="w-6 h-auto" />
         </button>
         <div
           className={`w-screen flex flex-row justify-end absolute left-0 top-0 z-11 md:hidden transition-transform duration-300 ${
@@ -116,11 +122,16 @@ export default function Navbar() {
                 className="bg-transparent min-w-full flex justify-end px-6 py-3"
               >
                 <button onClick={toggleMenu}>
-                  <Image
+                  {/*  <Image
                     className="w-auto"
                     src={closeIcon}
                     width={0}
                     height={13}
+                    alt="Cerrar menu"
+                  /> */}
+                  <img
+                    className="w-auto h-[13px]"
+                    src={closeIcon}
                     alt="Cerrar menu"
                   />
                 </button>

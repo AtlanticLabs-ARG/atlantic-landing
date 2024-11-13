@@ -1,5 +1,4 @@
 import whiteLogoAtlantic from "@/assets/images/contact/white-logo-atlantic.svg";
-import Image from "next/image";
 import ContactForm from "./ContactForm";
 import Social from "./Social";
 
@@ -34,12 +33,17 @@ export default function Contact() {
             <div className="w-full h-full lg:min-h-full flex flex-col justify-center items-center pr-3 xl:pr-10">
               <ContactForm />
             </div>
-            <Image
+            {/* <Image
               src={whiteLogoAtlantic.src}
               className="object-contain absolute bottom-5 right-3 w-10 xs:w-12 sm:w-14 md:w-16 lg:w-[70px] xl:w-20 h-10 xs:h-12 sm:h-14 md:h-16 lg:h-[70px] xl:h-20"
               alt="Atlantic Labs"
               width={0}
               height={0}
+            /> */}
+            <img
+              src={whiteLogoAtlantic.src}
+              className="object-contain absolute bottom-5 right-3 w-10 xs:w-12 sm:w-14 md:w-16 lg:w-[70px] xl:w-20 h-10 xs:h-12 sm:h-14 md:h-16 lg:h-[70px] xl:h-20"
+              alt="Atlantic Labs"
             />
           </div>
           <div className="lg:hidden">

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import infoIcon from "@/assets/images/contact/info.svg";
-import Image from "next/image";
 import emailjs from "emailjs-com";
 
 interface FormValues {
@@ -92,12 +91,17 @@ export default function ContactForm() {
               name="name"
               render={(msg) => (
                 <div className="flex flex-row md:relative text-blue gap-2">
-                  <Image
+                 {/*  <Image
                     src={infoIcon.src}
                     className="block md:absolute md:-left-6 md:top-0.5"
                     alt="Error en formulario"
                     width={16}
                     height={16}
+                  /> */}
+                   <img
+                    src={infoIcon.src}
+                    className="block md:absolute md:-left-6 md:top-0.5 w-4 h-4"
+                    alt="Error en formulario"
                   />
                   <span>{msg}</span>
                 </div>
@@ -116,12 +120,17 @@ export default function ContactForm() {
               name="email"
               render={(msg) => (
                 <div className="flex flex-row md:relative text-blue text-xs gap-2">
-                  <Image
+                 {/*  <Image
                     src={infoIcon.src}
                     className="block md:absolute md:-left-6 md:top-0.5"
                     alt="Error en formulario"
                     width={16}
                     height={16}
+                  /> */}
+                   <img
+                    src={infoIcon.src}
+                    className="block md:absolute md:-left-6 md:top-0.5 w-4 h-4"
+                    alt="Error en formulario"
                   />
                   <span>{msg}</span>
                 </div>
@@ -140,12 +149,17 @@ export default function ContactForm() {
               name="phone"
               render={(msg) => (
                 <div className="flex flex-row md:relative text-blue text-xs gap-2">
-                  <Image
+                  {/* <Image
                     src={infoIcon.src}
                     className="block md:absolute md:-left-6 md:top-0.5"
                     alt="Error en formulario"
                     width={16}
                     height={16}
+                  /> */}
+                  <img
+                    src={infoIcon.src}
+                    className="block md:absolute md:-left-6 md:top-0.5 w-4 h-4"
+                    alt="Error en formulario"
                   />
                   <span>{msg}</span>
                 </div>
