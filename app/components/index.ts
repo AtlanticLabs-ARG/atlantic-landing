@@ -5,4 +5,4 @@ export { default as Bases } from "./Bases/Bases";
 export { default as Partners } from "./Partners/Partners";
 export { default as Publicity } from "./Publicity/Publicity";
 export { default as Contact } from "./Contact/Contact";
-export { default as Navbar } from "./Navbar/Navbar";
+export { default as Navbar } from "./NavBar/NavBar";

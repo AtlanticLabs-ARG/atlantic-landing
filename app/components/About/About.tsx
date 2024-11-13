@@ -28,7 +28,7 @@ const items = [
 
 export default function About() {
   return (
-    <section className="w-screen py-10 flex justify-center" id="about">
+    <section className="w-screen py-10 lg:pt-32 flex justify-center" id="about">
       <div className="container flex justify-center">
         <div className="w-5/6 flex flex-col gap-20 lg:flex-row justify-center items-center lg:items-start relative h-[200vh] lg:h-auto">
           {items.map((item) => (

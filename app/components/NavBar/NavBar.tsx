@@ -26,20 +26,20 @@ const menuItems = [
 ];
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(window.scrollY < 100);
-  const [isTop, setIsTop] = useState(window.scrollY < 120);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isTop, setIsTop] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = () => {
     setMenuOpen(false);
-    if (window.scrollY > 120) {
-      setIsTop(false);
-    } else {
-      setIsTop(true);
-    }
 
-    if (window.scrollY > 100) {
+    const isHigherThan120 = window.scrollY > 120;
+    const isHigherThan100 = window.scrollY > 100;
+
+    setIsTop(!isHigherThan120);
+
+    if (isHigherThan100) {
       if (window.scrollY < lastScrollY) {
         setIsVisible(true);
       } else {
@@ -57,6 +57,11 @@ export default function Navbar() {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    setIsVisible(window.scrollY < 100);
+    setIsTop(window.scrollY < 120);
+  }, []);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -69,6 +74,7 @@ export default function Navbar() {
  ${isVisible ? "translate-y-0" : "-translate-y-28"} `}
     >
       <div className="flex justify-between items-center text-white">
+        {/* cambiar a por Link de next */}
         <a
           href="#hero"
           className={`${

@@ -77,7 +77,7 @@ export default function Bases() {
                 {/* Deslizable con texto descriptivo*/}
                 <span className="w-full h-full absolute top-0 right-0 z-[1] lg:ml-2 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out bg-lightBlue text-darkGreen px-3 sm:px-4 lg:px-5 py-2 lg:py-4 flex items-center lg:space-x-5 text-sm sm:text-base lg:text-lg xl:text-xl">
                   {/* Numero visible en web */}
-                  <h1 className="hidden lg:flex text-3xl lg:text-5xl text-darkGreen font-bold text-start">
+                  <h1 className="hidden lg:flex text-3xl lg:text-4xl xl:text-5xl text-darkGreen font-bold text-start">
                     {item.number}
                   </h1>
                   <span>{item.text}</span>

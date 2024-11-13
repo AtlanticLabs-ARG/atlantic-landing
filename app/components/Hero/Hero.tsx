@@ -1,8 +1,3 @@
-// import Image from "next/image";
-import banner from "@/assets/images/banner.png";
-import mobileBanner from "@/assets/images/mobile-banner.png";
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section

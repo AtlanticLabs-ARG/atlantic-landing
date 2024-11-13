@@ -46,7 +46,7 @@ export default function Contact() {
             <Social />
           </div>
           <div className="text-softWhite flex flex-col lg:flex-row justify-center lg:justify-start items-start lg:items-center gap-3 lg:gap-10 xl:gap-14 mt-12 lg:mt-16 font-thin text-xs sm:text-sm lg:text-base">
-            <a href="term-and-conditions">Términos y condiciones</a>
+            <h3>Términos y condiciones</h3>
             <h3>© 2024 Atlantic Labs</h3>
           </div>
         </div>
