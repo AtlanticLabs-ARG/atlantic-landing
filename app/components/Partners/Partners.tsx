@@ -122,12 +122,12 @@ export default function Partners() {
     return (
       <>
         {/* Left Line */}
-        {buildLine(directions.left, variant, titleInView)}
+        {buildLine(directions.left, variant, inView)}
 
         {/* Title */}
         <motion.h3
           ref={ref}
-          className="text-xl text-softWhite text-center"
+          className="text-base md:text-lg lg:text-2xl text-softWhite text-center"
           animate={{
             opacity: inView ? 1 : 0,
             transition: {
@@ -139,14 +139,14 @@ export default function Partners() {
         </motion.h3>
 
         {/* Right Line */}
-        {buildLine(directions.right, variant, titleInView)}
+        {buildLine(directions.right, variant, inView)}
       </>
     );
   };
 
   return (
     <section
-      className="w-screen flex justify-center py-32 cursor-default"
+      className="w-screen flex justify-center py-16 lg:py-32  cursor-default"
       id="partners"
     >
       <div className="container">
@@ -158,7 +158,7 @@ export default function Partners() {
         {/* Logos */}
         <div
           ref={logosRef}
-          className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-10 md:gap-16 lg:gap-0 pt-28 pb-40 px-10"
+          className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-10 md:gap-16 lg:gap-0 pt-14 lg:pt-28 pb-20 lg:pb-40 px-10"
         >
           {items.map((item) => (
             <motion.div
