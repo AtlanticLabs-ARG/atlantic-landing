@@ -36,7 +36,7 @@ const items = [
 export default function Bases() {
   return (
     <section
-      className="w-screen flex flex-col justify-start items-center py-28 cursor-default"
+      className="w-screen flex flex-col justify-start items-center py-16 lg:py-32 cursor-default"
       id="bases"
     >
       <div className="container flex justify-center">

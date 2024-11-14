@@ -4,6 +4,7 @@ import {
   Contact,
   Hero,
   Navbar,
+  Partners,
   Publicity,
   Team,
 } from "@/components";
@@ -16,8 +17,8 @@ export default function Home() {
       <About />
       <Team />
       <Bases />
-{/*       <Partners />
- */}      <Publicity />
+      <Partners />
+      <Publicity />
       <Contact />
     </main>
   );
