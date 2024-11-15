@@ -24,7 +24,7 @@ export default function Social() {
             className="w-5 h-5 contact-logo-filter"
             alt="vectorPhone"
           />
-          <span>(0223) 15 5253659</span>
+          <span>(0223) 15 5433194</span>
         </div>
         <div className="flex items-center gap-4">
           <img
