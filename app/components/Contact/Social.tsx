@@ -53,11 +53,6 @@ export default function Social() {
             alt="logoLinkedin"
           />
         </Link>
-        <img
-          src={logoFacebook.src}
-          className="w-7 h-7 contact-media-logo-filter"
-          alt="logoFacebook"
-        />
       </div>
     </div>
   );
