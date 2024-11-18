@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import logo from "@/assets/favicon.svg";
 import Image from "next/image";
 import closeIcon from "@/assets/images/navbar/close-button.svg";
@@ -31,7 +31,7 @@ export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     setMenuOpen(false);
 
     const isHigherThan120 = window.scrollY > 120;
@@ -48,14 +48,14 @@ export default function Navbar() {
     }
 
     setLastScrollY(window.scrollY);
-  };
+  }, [lastScrollY]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   useEffect(() => {
     setIsVisible(window.scrollY < 100);

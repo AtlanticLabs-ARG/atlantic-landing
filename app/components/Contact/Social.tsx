@@ -3,7 +3,6 @@ import vectorPhone from "@/assets/images/contact/vector-phone.svg";
 import vectorEmail from "@/assets/images/contact/vector-email.svg";
 import logoInstagram from "@/assets/images/contact/logo-instagram.svg";
 import logoLinkedin from "@/assets/images/contact/logo-linkedin.svg";
-import logoFacebook from "@/assets/images/contact/logo-facebook.svg";
 import Link from "next/link";
 
 export default function Social() {

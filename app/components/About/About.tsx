@@ -30,7 +30,7 @@ export default function About() {
   return (
     <section className="w-screen py-10 lg:pt-32 flex justify-center" id="about">
       <div className="container flex justify-center">
-        <div className="w-full flex flex-col gap-20 lg:flex-row justify-center items-center lg:items-start relative h-[240vh] lg:h-auto">
+        <div className="w-full flex flex-col gap-20 lg:flex-row justify-center items-center lg:items-start relative h-[200vh] sm:h-[180vh] lg:h-auto">
           {items.map((item) => (
             <div
               className={`${item.class} lg:h-auto group cursor-default transition duration-500 ease-in-out w-3/4 lg:w-1/3 flex flex-col justify-center items-center gap-5 text-[#D9D9D980] bg-darkGreen lg:hover:scale-125 pb-20 rounded-[8vh] px-5 xxs:px-8 sm:px-14 lg:px-10 shadow-[rgba(91,134,229,0.2)_0px_0px_40px] lg:shadow-none`}

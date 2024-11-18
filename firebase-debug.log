@@ -1,0 +1,86 @@
+[debug] [2024-11-18T23:19:09.413Z] ----------------------------------------------------------------------
+[debug] [2024-11-18T23:19:09.414Z] Command:       /Users/francofraiese/.nvm/versions/node/v22.4.1/bin/node /Users/francofraiese/.nvm/versions/node/v22.4.1/bin/firebase deploy
+[debug] [2024-11-18T23:19:09.414Z] CLI Version:   13.25.0
+[debug] [2024-11-18T23:19:09.414Z] Platform:      darwin
+[debug] [2024-11-18T23:19:09.415Z] Node Version:  v22.4.1
+[debug] [2024-11-18T23:19:09.415Z] Time:          Mon Nov 18 2024 20:19:09 GMT-0300 (hora estándar de Argentina)
+[debug] [2024-11-18T23:19:09.415Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-18T23:19:09.447Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-18T23:19:09.447Z] > authorizing via signed-in user (atlanticlabsmain@gmail.com)
+[debug] [2024-11-18T23:19:09.447Z] [iam] checking project atlantic-labs-landing for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-18T23:19:09.448Z] Checked if tokens are valid: true, expires at: 1731975434948
+[debug] [2024-11-18T23:19:09.448Z] Checked if tokens are valid: true, expires at: 1731975434948
+[debug] [2024-11-18T23:19:09.448Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/atlantic-labs-landing:testIamPermissions [none]
+[debug] [2024-11-18T23:19:09.448Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/atlantic-labs-landing:testIamPermissions x-goog-quota-user=projects/atlantic-labs-landing
+[debug] [2024-11-18T23:19:09.448Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/atlantic-labs-landing:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-18T23:19:10.355Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/atlantic-labs-landing:testIamPermissions 200
+[debug] [2024-11-18T23:19:10.355Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/atlantic-labs-landing:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-18T23:19:10.356Z] Checked if tokens are valid: true, expires at: 1731975434948
+[debug] [2024-11-18T23:19:10.356Z] Checked if tokens are valid: true, expires at: 1731975434948
+[debug] [2024-11-18T23:19:10.357Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/atlantic-labs-landing [none]
+[debug] [2024-11-18T23:19:10.745Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/atlantic-labs-landing 200
+[debug] [2024-11-18T23:19:10.745Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/atlantic-labs-landing {"projectId":"atlantic-labs-landing","projectNumber":"119752807099","displayName":"Atlantic-labs-landing","name":"projects/atlantic-labs-landing","resources":{"hostingSite":"atlantic-labs-landing"},"state":"ACTIVE","etag":"1_50cef599-a2ce-435b-bef6-909b046b5417"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-11-18T23:19:12.874Z] Checked if tokens are valid: true, expires at: 1731975434948
+[debug] [2024-11-18T23:19:12.875Z] Checked if tokens are valid: true, expires at: 1731975434948
+[debug] [2024-11-18T23:19:12.875Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/atlantic-labs-landing/sites/atlantic-labs-landing [none]
+[debug] [2024-11-18T23:19:14.126Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/atlantic-labs-landing/sites/atlantic-labs-landing 200
+[debug] [2024-11-18T23:19:14.127Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/atlantic-labs-landing/sites/atlantic-labs-landing {"name":"projects/atlantic-labs-landing/sites/atlantic-labs-landing","defaultUrl":"https://atlantic-labs-landing.web.app","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.0.2
+
+[info]    - Environments: .env
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+Failed to compile.
+
+./app/components/About/About.tsx
+46:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/components/Bases/Bases.tsx
+74:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/components/Contact/ContactForm.tsx
+57:62  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+101:20  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+130:20  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+159:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/components/Contact/Social.tsx
+6:8  Error: 'logoFacebook' is defined but never used.  @typescript-eslint/no-unused-vars
+14:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+22:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+30:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+40:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+50:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/components/NavBar/NavBar.tsx
+58:6  Warning: React Hook useEffect has a missing dependency: 'handleScroll'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./app/components/Partners/Partners.tsx
+190:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/components/Publicity/Publicity.tsx
+7:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[debug] [2024-11-18T23:19:20.512Z] Error: ENOENT: no such file or directory, open '/Users/francofraiese/Desktop/Atlantic Labs/atlantic-landing/atlantic-landing/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
