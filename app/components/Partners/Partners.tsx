@@ -146,7 +146,7 @@ export default function Partners() {
 
   return (
     <section
-      className="w-screen flex justify-center py-16 lg:py-32  cursor-default"
+      className="w-screen flex justify-center pt-10 pb-16 lg:py-32  cursor-default"
       id="partners"
     >
       <div className="container">
