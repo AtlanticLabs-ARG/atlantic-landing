@@ -1,11 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;200;300;400;500;600;700&display=swap");
 
 :root {
-  /* --background: #ffffff;
-  --foreground: #171717; */
   --primary: #36d1dc;
   --lightBlue: #4da3e1;
   --blue: #5b86e5;
@@ -15,15 +13,7 @@
   --softWhite: #eee4f7;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
-  /* color: var(--foreground); */
   color: #fff;
   background: var(--darkGreen);
   font-family: Arial, Helvetica, sans-serif;
