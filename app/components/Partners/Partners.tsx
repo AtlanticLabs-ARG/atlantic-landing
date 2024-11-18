@@ -150,49 +150,49 @@ export default function Partners() {
       id="partners"
     >
       <div className="container">
-        {/* First title with lines */}
-        <div className="w-full flex flex-row items-center justify-center gap-12">
-          {buildSection(titleRef, titleInView, titleVariant)}
-        </div>
+        <div className="flex flex-col justify-start items-center">
+          {/* First title with lines */}
+          <div className="w-full flex flex-row items-center justify-center gap-12">
+            {buildSection(titleRef, titleInView, titleVariant)}
+          </div>
 
-        {/* Logos */}
-        <div
-          ref={logosRef}
-          className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-10 md:gap-16 lg:gap-0 pt-14 lg:pt-28 pb-20 lg:pb-40 px-10"
-        >
-          {items.map((item) => (
-            <motion.div
-              variants={variant}
-              initial="hidden"
-              animate={logosInView && "show"}
-              custom={item.delay}
-              key={item.alt}
-              className="w-1/3 md:w-1/4 lg:w-1/6 flex justify-center"
-            >
-              <Image
-                alt={item.alt}
-                src={item.image}
-                width={item.width}
-                height={item.height}
-                className="grayscale transition duration-500 hover:grayscale-0 hover:scale-105"
-              />
-            </motion.div>
-          ))}
-        </div>
+          {/* Logos */}
+          <div
+            ref={logosRef}
+            className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-10 md:gap-16 lg:gap-0 pt-14 lg:pt-28 pb-20 lg:pb-40 px-10"
+          >
+            {items.map((item) => (
+              <motion.div
+                variants={variant}
+                initial="hidden"
+                animate={logosInView && "show"}
+                custom={item.delay}
+                key={item.alt}
+                className="w-1/3 md:w-1/4 lg:w-1/6 flex justify-center"
+              >
+                <Image
+                  alt={item.alt}
+                  src={item.image}
+                  width={item.width}
+                  height={item.height}
+                  className="grayscale transition duration-500 hover:grayscale-0 hover:scale-105"
+                />
+              </motion.div>
+            ))}
+          </div>
 
-        {/* Second title with lines */}
-        <div className="w-full flex flex-row items-center justify-center gap-10 pb-16">
-          {buildSection(title2Ref, title2InView, title2Variant)}
-        </div>
+          {/* Second title with lines */}
+          <div className="w-full flex flex-row items-center justify-center gap-10 pb-16">
+            {buildSection(title2Ref, title2InView, title2Variant)}
+          </div>
 
-        {/* PDM Picture */}
-        <Image
-          className="w-full"
-          src={pdm.src}
-          width={pdm.width}
-          height={pdm.height}
-          alt="Parense de manos II"
-        />
+          {/* PDM Picture */}
+          <img
+            className="w-full lg:w-3/4"
+            src={pdm.src}
+            alt="Parense de manos II"
+          />
+        </div>
       </div>
     </section>
   );
