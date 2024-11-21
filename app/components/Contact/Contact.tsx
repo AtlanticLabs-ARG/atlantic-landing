@@ -20,7 +20,7 @@ export default function Contact() {
                   Llevamos tu idea al siguiente nivel
                 </h1>
                 <h3 className="pr-5 text-softWhite">
-                  Nos encantaría a ayudarte a impulsar tu proyecto, nuestro
+                  Nos encantaría ayudarte a impulsar tu proyecto, nuestro
                   propósito es brindarte el apoyo y orientación que necesites.
                 </h3>
                 <h3 className="pr-5 text-softWhite">

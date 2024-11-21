@@ -10,6 +10,11 @@ import pdmLogo from "@/assets/images/partners/pdm-logo.svg";
 import { useInView, motion, Variants } from "framer-motion";
 import { MutableRefObject, useRef } from "react";
 
+const titles = {
+  brands: "Vinculados a marcas que nos inspiran",
+  lastColab: "Nuestra última colaboración",
+};
+
 const items = [
   {
     alt: "3Dids",
@@ -117,7 +122,8 @@ export default function Partners() {
   const buildSection = (
     ref: MutableRefObject<null>,
     inView: boolean,
-    variant: Variants
+    variant: Variants,
+    title: string
   ) => {
     return (
       <>
@@ -135,7 +141,7 @@ export default function Partners() {
             },
           }}
         >
-          Vinculados a marcas que nos inspiran
+          {title}{" "}
         </motion.h3>
 
         {/* Right Line */}
@@ -153,7 +159,7 @@ export default function Partners() {
         <div className="flex flex-col justify-start items-center">
           {/* First title with lines */}
           <div className="w-full flex flex-row items-center justify-center gap-12">
-            {buildSection(titleRef, titleInView, titleVariant)}
+            {buildSection(titleRef, titleInView, titleVariant, titles.brands)}
           </div>
 
           {/* Logos */}
@@ -183,7 +189,12 @@ export default function Partners() {
 
           {/* Second title with lines */}
           <div className="w-full flex flex-row items-center justify-center gap-10 pb-16">
-            {buildSection(title2Ref, title2InView, title2Variant)}
+            {buildSection(
+              title2Ref,
+              title2InView,
+              title2Variant,
+              titles.lastColab
+            )}
           </div>
 
           {/* PDM Picture */}
